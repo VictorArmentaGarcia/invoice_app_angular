@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Item } from '../../models/Item';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'form-item',
@@ -21,14 +21,19 @@ export class FormItemComponent {
     
   }
 
-  onSublime(): void {
-    this.addEventEmitter.emit({id: this.counterId, ...this.item});
-    this.counterId++;
-
-    this.item = {
-      product: '',
-      price: '',
-      quantity: '',
+  onSublime(itemForm: NgForm): void {
+    if(itemForm.valid){
+      this.addEventEmitter.emit({id: this.counterId, ...this.item});
+      this.counterId++;
+  
+      this.item = {
+        product: '',
+        price: '',
+        quantity: '',
+      }
+  
+      itemForm.reset();
+      itemForm.resetForm();
     }
   }
 
