@@ -1,6 +1,6 @@
 export class Address {
     country!: string;
     city!: string;
-    stret!: string;
+    street!: string;
     number!: number;
 }
