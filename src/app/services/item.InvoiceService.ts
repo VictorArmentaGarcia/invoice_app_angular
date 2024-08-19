@@ -51,4 +51,16 @@ export class InvoiceService {
     0);
   }
 
+  removeInvoice(id: number) : Invoice{
+    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+    const total = this.calculateTotal();
+    return { ...this.invoice, total: total };
+  }
+
+  saveItem(item: Item): Invoice {
+    this.invoice.items = [... this.invoice.items, item]
+    const total = this.calculateTotal();
+    return { ...this.invoice, total: total }; 
+  }
+  
 }

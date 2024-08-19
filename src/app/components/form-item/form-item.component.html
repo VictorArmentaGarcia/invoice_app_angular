@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSublime()" class="form w-50">
+    <input type="text"
+    name="product"
+    placeholder="Producto" 
+    class="form-control"
+    [(ngModel)]="item.product" >
+
+    <input type="text"
+    name="quantity"
+    placeholder="Cantidad" 
+    class="form-control"
+    [(ngModel)]="item.quantity" >
+    
+    <input type="text"
+    name="price"
+    placeholder="Precio" 
+    class="form-control"
+    [(ngModel)]="item.price" >
+
+    <button class="btn btn-primary m-3">Guardar</button>
+
+</form>
