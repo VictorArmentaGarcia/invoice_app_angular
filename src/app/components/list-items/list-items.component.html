@@ -9,11 +9,12 @@
                 <th>producto</th>
                 <th>price</th>
                 <th>quantity</th>
+                <th>remove</th>
             </tr>
         </thead>
         <tbody>
             @for (item of items; track $index) {
-                    <tr row-view [item]= item></tr>
+                    <tr row-view [item]= item (removeItem)="deleteItem($event)"></tr>
             }
         </tbody>
     </table>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from '../../models/Item';
 
 @Component({
@@ -10,5 +10,10 @@ import { Item } from '../../models/Item';
 export class RowViewComponent {
 
   @Input() item : Item = new Item();
+  @Output() removeItem : EventEmitter<number> =new EventEmitter();
+
+  deleteItem(id: number): void {
+    this.removeItem.emit(id);
+  }
 
 }

@@ -14,7 +14,7 @@ import { TotalComponent } from '../total/total.component';
     CompanyViewComponent, 
     InvoiceViewComponent, 
     ListItemsComponent,
-  TotalComponent],
+    TotalComponent],
   templateUrl: './invoice.component.html'
 })
 export class InvoiceComponent implements OnInit {
@@ -27,5 +27,8 @@ export class InvoiceComponent implements OnInit {
     this.invoice = this.invoiceService.getInvoice();
   }
 
+  deleteItem(id: number) {
+    this.invoice.items = this.invoice.items.filter(item => item.id != id);
+  }
 
 }
