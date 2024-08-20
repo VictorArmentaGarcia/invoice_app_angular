@@ -12,13 +12,13 @@
 
     @if(product.invalid && (product.dirty || product.touched)){
       @if(product.errors!['required']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           Nombre del prodcuto requerido!
         </div>
       }
 
       @if(product.errors!['minlength']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           Cantidad minima de caracteres de 5
         </div>
       }
@@ -36,13 +36,13 @@
 
     @if(quantity.invalid && (quantity.dirty || quantity.touched)){
       @if(quantity.errors!['required']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           Cantidad requerido!
         </div>
       }
 
       @if(quantity.errors!['minlength']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           Cantidad minima de caracteres de 1
         </div>
       }
@@ -60,13 +60,13 @@
 
     @if(price.invalid && (price.dirty || price.touched)){
       @if(price.errors!['required']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           precio requerido!
         </div>
       }
 
       @if(price.errors!['min']){
-        <div class="text-danger">
+        <div class="text-danger mx-3">
           precio minima de caracteres de 1
         </div>
       }
